@@ -9,4 +9,4 @@ class ContactForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
     class Meta():
         model = Project
-        fields = ('author','project_pic','link','title','summary','text')
+        fields = ('author','link','title','summary','text')
