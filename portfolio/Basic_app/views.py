@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from Basic_app.models import Project,Contact # models
 from Basic_app.forms import ContactForm,ProjectForm
-from django.views.generic import TemplateView,CreateView,ListView,DetailView
+from django.views.generic import TemplateView,CreateView,ListView,DetailView,UpdateView,DeleteView
+
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # View for the about page
 class AboutView(TemplateView):
@@ -22,12 +25,27 @@ class ProjectList(ListView):
     model = Project
 # Add functionality later to filter by condition. (def get_queryset)
 
-# View for New Project Create page
-class ProjectCreate(CreateView):
+# Detail View for Projects
+class ProjectDetailView(DetailView):
+    model = Project
+
+# View for New Project Create page, requires a login first
+class ProjectCreate(LoginRequiredMixin,CreateView):
+    login_url = '/login/'
+    redirect_field_name = 'project/project_detail.html'
     template_name = 'project_form.html'
     form_class = ProjectForm
     model = Project
 
-# Detail View for Projects
-class ProjectDetailView(DetailView):
+# View for project update
+class ProjectUpdate(LoginRequiredMixin,UpdateView):
+    login_url = '/login/'
+    redirect_field_name = 'project/project_detail.html'
+    form_class = ProjectForm
     model = Project
+
+# View for project delete
+class ProjectDelete(LoginRequiredMixin,DeleteView):
+    template_name = 'project_delete_confirm.html'
+    model = Project
+    success_url = reverse_lazy('project_list')

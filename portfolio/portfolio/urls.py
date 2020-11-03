@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
+from django.contrib.auth import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'',include('Basic_app.urls')),
+
+    # adding login and logout functionality
+    # django automatically links up the view of this page with login.html since it is in templates directory
+    url(r'^accounts/login/$',views.LoginView.as_view(),name='login'),
+
+    # When you logout, you go to the next page
+    url(r'^accounts/logout/$',views.LogoutView.as_view(),name='logout',kwargs={'next_page':'/'}),
 ]

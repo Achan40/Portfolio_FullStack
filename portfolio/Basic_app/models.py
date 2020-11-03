@@ -16,7 +16,7 @@ class Project(models.Model):
     text = models.TextField()
 
     def __str__(self):
-        return self.author
+        return self.title
 
     # After a new project is created, go to its detail page
     def get_absolute_url(self):
