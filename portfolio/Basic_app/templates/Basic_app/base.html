@@ -16,8 +16,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             
             <!--Container is used to offset the navbar text-->
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'about' %}">About Me</a>
+            <div class="container col-md-10">
+                <span class="navbar-brand">Aaron Chan</span>
 
                 <!--Must include Tquery,Popper,bootstrap scripts for dropdown to work correctly-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,20 +25,23 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">About Me<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'project_list' %}">Projects<span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'contact' %}">Contact<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav navbar-right">
+                    <ul class="navbar-nav">
                         {% if user.is_authenticated %}
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'project_create' %}">Create New Project<span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Logout<span class="sr-only">(current)</span></a>
                         </li>
                         {% endif %}
@@ -49,7 +52,7 @@
 
         </nav>
 
-        <div class="container">
+        <div class="container d-flex align-items-center flex-column col-md-10">
             {% block content %}
             {% endblock %}
         </div>
@@ -57,7 +60,7 @@
 
         <footer class="footer">
             <div class="d-flex justify-content-center">
-              <span class="text-muted"><a href="{% url 'login' %}" id="secret_login">Thanks for reading!</a></span>
+              <span class="text-muted"><a href="{% url 'login' %}" id="secret_login">Thanks for reading! Copyright © ___ 2020</a></span>
             </div>
         </footer>
 
