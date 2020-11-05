@@ -3,7 +3,6 @@
 
 {% for project in project_list %}
 
-    <h1>{{ project.project_pic }}</h1>
     <h1><a href="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></h1>
     <h2>Link: {{ project.link }}</h2>
     <h2>{{ project.summary }}</h2>
