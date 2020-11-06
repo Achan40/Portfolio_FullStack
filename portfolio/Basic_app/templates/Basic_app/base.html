@@ -16,8 +16,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             
             <!--Container is used to offset the navbar text-->
-            <div class="container col-md-10">
-                <span class="navbar-brand">Aaron Chan</span>
+            <div class="container col-md-6">
+                <h3 class="navbar-brand">Aaron Chan</h3>
 
                 <!--Must include Tquery,Popper,bootstrap scripts for dropdown to work correctly-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
 
         </nav>
 
-        <div class="container d-flex align-items-center flex-column col-md-10">
+        <div class="container d-flex align-items-center flex-column col-md-6">
             {% block content %}
             {% endblock %}
         </div>
@@ -60,7 +60,11 @@
 
         <footer class="footer">
             <div class="d-flex justify-content-center">
-              <span class="text-muted"><a href="{% url 'login' %}" id="secret_login">Thanks for reading! Copyright © ___ 2020</a></span>
+                <span class="text-muted">
+                    <a href="{% url 'login' %}" id="secret_login">Copyright © ___ 2020 </a>| 
+                    <a href="https://github.com/Achan40" class="social_link">Github </a>| 
+                    <a href="https://www.linkedin.com/in/aaron-chan-30393115a/" class="social_link">LinkedIn</a>
+                </span>
             </div>
         </footer>
 
