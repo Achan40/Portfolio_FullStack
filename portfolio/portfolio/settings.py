@@ -123,5 +123,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
+# Media
+MEDIA_ROOT = os.path.join(BASE_DIR,'Basic_app/media/project_pic')
+MEDIA_URL = '/media/'
+
 # redirect to homepage
 LOGIN_REDIRECT_URL = '/'

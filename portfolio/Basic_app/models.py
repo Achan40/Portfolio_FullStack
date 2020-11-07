@@ -7,6 +7,7 @@ class Project(models.Model):
     # Only expecting one user, as this is a personal porfolio
     author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
     
+    project_pic = models.ImageField(upload_to='project_pic', blank=True)
     link = models.URLField()
     title = models.CharField(max_length=200)
     summary = models.TextField(max_length=500)

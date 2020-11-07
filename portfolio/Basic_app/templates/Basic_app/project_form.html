@@ -1,7 +1,7 @@
 {% extends "Basic_app/base.html" %}
 {% block content%}
     <h1>Add New Project</h1>
-    <form class="project_create" method="POST">
+    <form class="project_create" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
 

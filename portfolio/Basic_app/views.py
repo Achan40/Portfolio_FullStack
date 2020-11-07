@@ -49,3 +49,5 @@ class ProjectDelete(LoginRequiredMixin,DeleteView):
     template_name = 'project_delete_confirm.html'
     model = Project
     success_url = reverse_lazy('project_list')
+
+

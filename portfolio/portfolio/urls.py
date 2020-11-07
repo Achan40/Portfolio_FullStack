@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 from django.conf.urls import url,include
 from django.contrib.auth import views
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +30,5 @@ urlpatterns = [
 
     # When you logout, you return to the about page
     url(r'^accounts/logout/$',views.LogoutView.as_view(next_page='about'),name='logout'),
-]
+
+] +static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

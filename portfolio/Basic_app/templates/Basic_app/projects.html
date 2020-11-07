@@ -3,6 +3,11 @@
 
 {% for project in project_list %}
 
+    <!--Only display image if there is an image to display-->
+    {% if project.project_pic %}
+        <img src="{{ project.project_pic.url }}">
+    {% endif %}
+
     <h1><a href="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></h1>
     <h2>Link: {{ project.link }}</h2>
     <h2>{{ project.summary }}</h2>
