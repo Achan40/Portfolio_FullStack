@@ -1,17 +1,25 @@
 {% extends "Basic_app/base.html" %}
 {% block content %}
 
+<div class="row justify-content-center">
+
 {% for project in project_list %}
-
+<div class="col-auto">
     <!--Only display image if there is an image to display-->
-    {% if project.project_pic %}
-        <img src="{{ project.project_pic.url }}">
-    {% endif %}
+    <a href="{% url 'project_detail' pk=project.pk %}" class="card-link">
+    <div class="card">
+        {% if project.project_pic %}
+            <img class="card-img-top pics" src="{{ project.project_pic.url }}">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h1>
+            <p>{{ project.summary }}</p>
+        </div>
+    </div>
+    </a>
 
-    <h1><a href="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></h1>
-    <h2>Link: {{ project.link }}</h2>
-    <h2>{{ project.summary }}</h2>
-
+</div>
 {% endfor %}
 
+</div>
 {% endblock %}

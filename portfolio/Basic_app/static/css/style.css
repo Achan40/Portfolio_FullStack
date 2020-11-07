@@ -22,7 +22,7 @@ body {
     border-radius: .5rem;
 }
 
-#profile_pic {
+.pics {
     border-radius: .5em;
 }
 
@@ -44,4 +44,15 @@ body {
 .social_link {
     color: inherit;
     text-decoration: none;
+}
+
+.card {
+    width: 18rem;
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-link,.card-link:hover {
+    color: inherit;
+    text-decoration: inherit;
 }
