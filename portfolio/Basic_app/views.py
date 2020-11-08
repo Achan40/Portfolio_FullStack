@@ -23,7 +23,11 @@ class ContactConfirmed(TemplateView):
 class ProjectList(ListView):
     template_name = 'projects.html'
     model = Project
-# Add functionality later to filter by condition. (def get_queryset)
+
+    # order by rank ascending
+    def get_queryset(self):
+        return Project.objects.all().order_by('rank')
+
 
 # Detail View for Projects
 class ProjectDetailView(DetailView):

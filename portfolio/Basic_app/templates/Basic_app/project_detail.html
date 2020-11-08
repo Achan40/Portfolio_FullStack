@@ -1,11 +1,14 @@
 {% extends "Basic_app/base.html" %}
 {% block content%}
-    <span>{{project.project_pic}}</span>
+    {% if project.project_pic %}
+        <img class="card-img-top pics" src="{{ project.project_pic.url }}">
+    {% endif %}
     <h1>{{ project.title }}</h1>
     <h2>{{ project.link }}</h2>
     <h2>{{ project.text }}</h2>
 
 {% if user.is_authenticated %}
+<h1>Aribitrary Rank:{{ project.rank }}</h1>
 <a class="btn btn-primary" href="{% url 'project_edit' pk=project.pk %}">Edit Project</a>
 <a class="btn btn-primary" href="{% url 'project_remove' pk=project.pk %}">Remove Project</a>
 {% endif %}

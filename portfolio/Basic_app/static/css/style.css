@@ -49,10 +49,9 @@ body {
 .card {
     width: 18rem;
     border-radius: .5rem;
-    margin-bottom: 1.5rem;
 }
 
-.card-link,.card-link:hover {
+.card-link {
     color: inherit;
     text-decoration: inherit;
 }
