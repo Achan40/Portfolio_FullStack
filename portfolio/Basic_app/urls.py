@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^$',views.AboutView.as_view(),name='about'),
 
     # Creating contact page
-    url(r'^contact/$',views.ContactView.as_view(),name='contact'),
+    url(r'^contact/$',views.Contact_View,name='contact_create'),
 
     # Contact confirmation page
     url(r'^contact/confirm/$',views.ContactConfirmed.as_view(),name='contact_confirm'),

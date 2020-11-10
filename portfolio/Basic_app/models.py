@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 # Model for various projects
 class Project(models.Model):
@@ -26,6 +27,7 @@ class Contact(models.Model):
     author = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
     text = models.TextField(max_length=1000)
+    contact_date = models.DateTimeField(default=timezone.now)
 
     # After a contact is created, go to the about page
     def get_absolute_url(self):

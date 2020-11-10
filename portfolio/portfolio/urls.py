@@ -31,4 +31,7 @@ urlpatterns = [
     # When you logout, you return to the about page
     url(r'^accounts/logout/$',views.LogoutView.as_view(next_page='about'),name='logout'),
 
+    #add captcha
+    path('captcha/',include('captcha.urls'))
+
 ] +static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
