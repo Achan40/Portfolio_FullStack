@@ -10,16 +10,8 @@ body {
     margin-bottom: 60px;
 }
 
-.navbar-toggler {
+.navbar-toggler, .jumbotron, .pics, .modal-content {
     border-radius: .5rem;
-}
-
-.jumbotron {
-    border-radius: .5rem;
-}
-
-.pics {
-    border-radius: .5em;
 }
 
 .footer {
@@ -37,7 +29,7 @@ body {
     cursor: default;
 }
 
-.social_link {
+.social_link, #contact_confirm_button, #contact_confirm_button:hover, .link_to_project, .link_to_project:hover {
     color: inherit;
     text-decoration: none;
 }
@@ -47,7 +39,7 @@ body {
     border-radius: .5rem;
 }
 
-.card-link {
+.card-link, .card-link:hover {
     color: inherit;
     text-decoration: inherit;
 }

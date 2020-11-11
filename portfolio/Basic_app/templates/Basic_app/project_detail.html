@@ -4,11 +4,11 @@
         <img class="card-img-top pics" src="{{ project.project_pic.url }}">
     {% endif %}
     <h1>{{ project.title }}</h1>
-    <h2>{{ project.link }}</h2>
-    <h2>{{ project.text }}</h2>
+    <a href="{{ project.link }}" class="link_to_project" target="_blank">{{ project.link }}</a>
+    <p>{{ project.text }}</p>
 
 {% if user.is_authenticated %}
-<h1>Aribitrary Rank:{{ project.rank }}</h1>
+<p>Aribitrary Rank:{{ project.rank }}</p>
 <a class="btn btn-primary" href="{% url 'project_edit' pk=project.pk %}">Edit Project</a>
 <a class="btn btn-primary" href="{% url 'project_remove' pk=project.pk %}">Remove Project</a>
 {% endif %}

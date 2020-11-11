@@ -23,16 +23,10 @@
 
 <!--Popup modal code-->
 <div class="modal fade" id="modal{{ project.rank }}" tabindex="-1" role="dialog" aria-labelledby="modal-title{{ project.rank }}" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-
             <div class="modal-header">
-                <h5 class="modal-title" id="modal-title{{ project.rank }}">{{ project.title }}</h5>
-
-                <!--Site Admin tool-->
-                {% if user.is_authenticated %}
-                    <a href="{% url 'project_detail' pk=project.pk %}" class="card-link">Detail</a>
-                {% endif %}
+                <h1 class="modal-title" id="modal-title{{ project.rank }}">{{ project.title }}</h1>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -40,11 +34,20 @@
             </div>
 
             <div class="modal-body">
+                {% if project.project_pic %}
+                    <img class="card-img-top pics" src="{{ project.project_pic.url }}">
+                {% endif %}
                 <p>{{project.text}}</p>
             </div>
 
            <div class="modal-footer">
+               <!--Site Admin tool-->
+                {% if user.is_authenticated %}
+                    <button type="button" class="btn btn-primary"><a href="{% url 'project_detail' pk=project.pk %}" class="card-link">Detail</a></button>
+                {% endif %}
+
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"><a href="{{ project.link }}" class="link_to_project" target="_blank">Link to Project</a></button>
             </div>
 
         </div>

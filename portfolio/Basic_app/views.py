@@ -23,6 +23,8 @@ def Contact_View(request):
     else:
         contact = ContactForm()
 
+    # context dictionary allows us to use properties of model form  in the view(ie: contact.etc)
+    # otherwise will default to 'form'
     return render(request, 'contact.html', {'contact':contact})
 
 # Contact confirmation page
