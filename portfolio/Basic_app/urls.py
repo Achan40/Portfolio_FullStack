@@ -13,6 +13,9 @@ urlpatterns = [
     # Contact confirmation page
     url(r'^contact/confirm/$',views.ContactConfirmed.as_view(),name='contact_confirm'),
 
+    # List of Contacts page
+    url(r'^contact/contact_list/$',views.ContactList.as_view(),name='contact_list'),
+
     # List of projects
     url(r'^projects/$',views.ProjectList.as_view(),name='project_list'),
 

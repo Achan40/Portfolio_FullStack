@@ -29,12 +29,23 @@ def Contact_View(request):
 class ContactConfirmed(TemplateView):
     template_name = 'contact_confirm.html'
 
+# View for list of contacts (must be loggedin)
+class ContactList(LoginRequiredMixin,ListView):
+    login_url = '/login/'
+    template_name = 'contact_list.html'
+    redirect_field_name = 'contact/'
+    model = Contact
+
+    # order by date descending
+    def get_queryset(self):
+        return Contact.objects.all().order_by('-contact_date')
+
 # View for list of projects
 class ProjectList(ListView):
     template_name = 'project_list.html'
     model = Project
 
-    # order by rank ascending
+    # order by rank ascending, this is so that I can change the order of my projects
     def get_queryset(self):
         return Project.objects.all().order_by('rank')
 
