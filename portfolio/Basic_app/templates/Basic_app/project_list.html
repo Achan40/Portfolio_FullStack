@@ -14,7 +14,7 @@
         {% endif %}
         <div class="card-body">
             <h5 class="card-title">{{ project.title }}</h1>
-            <p>{{ project.summary }}</p>
+            <p>{{ project.summary|safe }}</p>
         </div>
     </div>
     </a>
@@ -42,11 +42,11 @@
                 </div>
             </div>
             {% endif %}
-            
+
             <div class="modal-body text-center">
                 <div class="container">
                     <!-- Portfolio Modal - Text-->
-                    <p>{{ project.text }}</p>
+                    <p>{{ project.text|safe }}</p>
                 </div>
             </div>
 
