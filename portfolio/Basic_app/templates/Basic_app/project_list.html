@@ -23,21 +23,31 @@
 
 <!--Popup modal code-->
 <div class="modal fade" id="modal{{ project.rank }}" tabindex="-1" role="dialog" aria-labelledby="modal-title{{ project.rank }}" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title" id="modal-title{{ project.rank }}">{{ project.title }}</h1>
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                            <h1 class="modal-title" id="modal-title{{ project.rank }}">{{ project.title }}</h1>
+                </div>
             </div>
-
-            <div class="modal-body">
-                {% if project.project_pic %}
-                    <img class="card-img-top pics" src="{{ project.project_pic.url }}">
-                {% endif %}
-                <p>{{project.text}}</p>
+            <!--Render this if there is an image detected in the model-->
+            {% if project.project_pic %}
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <img class="card-img-top pics" src="{{ project.project_pic.url }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            <div class="modal-body text-center">
+                <div class="container">
+                    <!-- Portfolio Modal - Text-->
+                    <p>{{ project.text }}</p>
+                </div>
             </div>
 
            <div class="modal-footer">
@@ -49,7 +59,6 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary"><a href="{{ project.link }}" class="link_to_project" target="_blank">Link to Project</a></button>
             </div>
-
         </div>
     </div>
 </div>
