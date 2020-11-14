@@ -1,15 +1,22 @@
 {% extends "Basic_app/base.html" %}
 {% load static %}
 {% block content%}
-    <div class="jumbotron">
+    
+    <div class="container w-75">
+        
+        <div class="container d-flex align-items-center justify-content-center">
+            <h1 class="display-4 ">About Me</h1>
+        </div>
+        <hr class="my-4">
+
         <div class="container d-flex align-items-center justify-content-center">
             <img src="{% static 'images/test.JPG' %}" alt="Professional Picture" class="pics">
         </div>
-        <hr class="my-4">
-        <p class="lead">Short summary, things I am interested in, what I am currently up to Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque blanditiis delectus consequatur suscipit nesciunt officiis, ea amet? Distinctio optio, ipsum eum recusandae quis esse. Natus nostrum praesentium porro incidunt laudantium.</p>
-        <hr class="my-4">
+        
+        <p class="lead text-center" id="aboutP">Short summary, things I am interested in, what I am currently up to Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque blanditiis delectus consequatur suscipit nesciunt officiis, ea amet? Distinctio optio, ipsum eum recusandae quis esse. Natus nostrum praesentium porro incidunt laudantium.</p>
+        <p>Where resume,education, skills will go Lorem ipsumdolor sit amet consectetur adipisicing elit. Totam temporibus soluta alias quaerat sit, dicta, dignissimos tenetur nihil minus quibusdam, est nisi. Deserunt aspernatur soluta tenetur libero. Cupiditate, adipisci velit!</p>
     </div>
+    
 
-    <p>Where resume,education, skills will go Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus soluta alias quaerat sit, dicta, dignissimos tenetur nihil minus quibusdam, est nisi. Deserunt aspernatur soluta tenetur libero. Cupiditate, adipisci velit!</p>
-    <p class="text-align-center">This is where social goes:</p>
+    
 {% endblock %}
