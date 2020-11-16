@@ -1,0 +1,27 @@
+{% extends "Basic_app/base.html" %}
+{% load static %}
+{% block content%}
+    
+    <div class="container w-75">
+        
+        <div class="container d-flex align-items-center justify-content-center">
+            <h1 class="display-3 text-center">Hi, I'm Aaron</h1>
+        </div>
+        <hr class="my-4">
+
+        <div class="container d-flex align-items-center justify-content-center">
+            <img src="{% static 'images/LinkedinPic.JPG' %}" alt="Professional Picture" id="profilePic">
+        </div>
+        <p class="lead text-center" id="aboutP">I program in my free time, primarily focusing on data related topics such as: data visualization, analysis and machine learning.
+            I'm very flexible so I explore other areas of programming as well, like bots or full stack development.
+            Python is my primary language, although I am not restricted to it.
+        </p>
+        <p class="lead text-center">
+            This porfolio is used to showcase projects that I have worked on.
+            If you want to reach out to me, feel free to do so directly via the contact form on this website or through the social media links at the footer.
+        </p>
+    </div>
+    
+
+    
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "Basic_app/base.html" %}
+{% block content%}
+
+{% for contact in contact_list %}
+<h1>{{ contact.author }}</h1>
+<h5>{{ contact.email }}</h2>
+<h5>{{ contact.text }}</h2>
+<p>{{ contact.contact_date }}</p>
+<hr>
+{% endfor %}
+
+{% endblock %}
