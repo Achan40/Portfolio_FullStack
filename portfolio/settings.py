@@ -127,7 +127,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Extra places for collectstatic to find static files
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'Basic_app/static'),
+    os.path.join(BASE_DIR,'Basic_app/staticfiles'),
 )
 
 # Media
