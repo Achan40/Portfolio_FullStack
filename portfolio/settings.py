@@ -26,7 +26,7 @@ SECRET_KEY = "Not a key"# This has been set in enviornment variables in heroku c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['achan-portfolio.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['achan-portfolio.herokuapp.com','127.0.0.1']
 
 
 # Application definition
