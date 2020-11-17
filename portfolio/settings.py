@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-from .secret_settings import THIS_IS_A_SECRET
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,12 +21,12 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'Basic_app/templates/Basic_app')
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = THIS_IS_A_SECRET
+SECRET_KEY = "Not a key"# This has been set in enviornment variables in heroku console
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://achan-portfolio.herokuapp.com/']
 
 
 # Application definition
