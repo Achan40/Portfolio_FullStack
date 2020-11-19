@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Basic_app',
-    'captcha',
-    'storages'
+    'captcha'
 ]
 
 MIDDLEWARE = [
@@ -131,17 +130,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'Basic_app/staticfiles'),
 )
 
-# Amazon s3 database to host user uploaded media files
-AWS_ACCESS_KEY_ID = 'change in heroku enviornment variables'
-AWS_SECRET_ACCESS_KEY = 'change in heroku enviornment variables'
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_STORAGE_BUCKET_NAME = 'arn:aws:s3:::achanportfolio'
-AWS_S3_REGION_NAME = 'ca-central-1'
-
 # Media
-# MEDIA_ROOT = os.path.join(BASE_DIR,'Basic_app/media/project_pic')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'Basic_app/media/uploads')
+MEDIA_URL = '/media/'
 
 # redirect to homepage
 LOGIN_REDIRECT_URL = '/'
