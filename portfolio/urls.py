@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # remove admin in production
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     url(r'',include('Basic_app.urls')),
 
     # adding login and logout functionality
