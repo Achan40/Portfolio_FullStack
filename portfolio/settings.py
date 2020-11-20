@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Basic_app',
-    'captcha'
+    'captcha',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# Using whitenoise to to store static files (I only have AWS s3 access free for a year)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -130,10 +132,19 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'Basic_app/staticfiles'),
 )
 
+# AWS for storing user uploaded media files only
+AWS_ACCESS_KEY_ID = 'stored in env variable in heroku'
+AWS_SECRET_ACCESS_KEY = 'stored in env variable in heroku'
+AWS_STORAGE_BUCKET_NAME = 'achanportfolio'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+AWS_LOCATION = 'media'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # Media
-MEDIA_ROOT = os.path.join(BASE_DIR,'Basic_app/media/uploads')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR,'Basic_app/media/uploads')
+# MEDIA_URL = '/media/'
 
 # redirect to homepage
 LOGIN_REDIRECT_URL = '/'
-
