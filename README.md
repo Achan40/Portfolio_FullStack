@@ -8,5 +8,5 @@ It is hosted on heroku, media files stored on amazon s3, and static files stored
 See the requirements.txt file for a list of all packages and their versions. The runtime.txt file has the Python version.
 
 ### Architecture Diagram
-Here's a basic architecture diagram for this web app
+Here's a basic architecture diagram for this web app  
 ![Portfolio Diagram](https://achanportfolio.s3.ca-central-1.amazonaws.com/media/Programming_Portfolio.PNG)
