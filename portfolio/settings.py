@@ -137,8 +137,8 @@ STATICFILES_DIRS = (
 )
 
 # AWS for storing user uploaded media files only
-AWS_ACCESS_KEY_ID = 'replace'
-AWS_SECRET_ACCESS_KEY = 'replace'
+AWS_ACCESS_KEY_ID = 'reset'
+AWS_SECRET_ACCESS_KEY = 'reset'
 AWS_STORAGE_BUCKET_NAME = 'achanportfolio'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
