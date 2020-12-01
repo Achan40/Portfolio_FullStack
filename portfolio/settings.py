@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import dj_database_url
 import os
 
@@ -29,7 +30,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'Basic_app/templates/Basic_app')
 SECRET_KEY = "Not a key"# This has been set in enviornment variables in heroku console
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['achan-portfolio.herokuapp.com','127.0.0.1']
 
