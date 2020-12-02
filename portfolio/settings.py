@@ -27,7 +27,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'Basic_app/templates/Basic_app')
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "Not a key"# This has been set in enviornment variables in heroku console
+SECRET_KEY = os.environ.get('SECRET_KEY')
+# This has been set in enviornment variables in heroku console
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -145,8 +146,8 @@ STATICFILES_DIRS = (
 )
 
 # AWS for storing user uploaded media files only
-AWS_ACCESS_KEY_ID = 'reset'
-AWS_SECRET_ACCESS_KEY = 'reset'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'achanportfolio'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
