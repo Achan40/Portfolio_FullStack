@@ -31,8 +31,7 @@ SECRET_KEY = "placeholder"
 # This has been set in enviornment variables in heroku console
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = ['achan-portfolio.herokuapp.com','127.0.0.1']
 
 
