@@ -16,7 +16,7 @@ import dj_database_url
 import os
 
 # for use for pre-prod
-#from .secret_settings import SECRET_KEY,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY
+# from .secret_settings import SECRET_KEY
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +27,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'Basic_app/templates/Basic_app')
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "placeholder"
 # This has been set in enviornment variables in heroku console
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -85,19 +85,19 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
-
-# For use in pre-prod
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+#     'default': dj_database_url.config(
+#         default=config('DATABASE_URL')
+#     )
 # }
+
+#For use in pre-prod
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -146,8 +146,8 @@ STATICFILES_DIRS = (
 )
 
 # AWS for storing user uploaded media files only
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = "placeholder"
+AWS_SECRET_ACCESS_KEY = "placeholder"
 AWS_STORAGE_BUCKET_NAME = 'achanportfolio'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
